@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+<!-- AGENT-MEMORY:BEGIN -->
+- Use shared workspace shells and browser-safe content definitions with distinct TanStack leaf routes, so public, learning and technical pages remain consistent and individually discoverable.
+- Stage 1 preferences are visit-scoped React context only; defer authentication and durable data to the requested integration stage rather than imply persistence.
+- Keep preview UI separate from any future circuit solver and live AI services; foundation demonstrations must not emit simulated numerical results.
+<!-- AGENT-MEMORY:END -->
