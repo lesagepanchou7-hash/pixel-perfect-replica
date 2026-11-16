@@ -9,10 +9,11 @@
 - [x] Separate navigation, preference controls and end-to-end testing
 
 ## Current laboratory upgrade
-- [ ] Step B: interactive 3D laboratory and camera/component controls
-- [ ] Step C: shared model, terminal connections, schematic and validated DC calculations
-- [ ] Step D: protected circuit-aware AI, accounts and profile preferences
-- [ ] Cross-device construction and AI verification
+- [x] Step B: interactive 3D laboratory and camera/component controls
+- [x] Step C: shared model, terminal connections, schematic and validated DC calculations
+- [x] Step D implementation: protected circuit-aware AI endpoint, account UI and private profile preference saving/loading
+- [ ] Step D authenticated verification: blocked by no real signed-up account and no approved adult-managed access; direct AI provider response verified
+- [x] Cross-device construction, terminal wiring, measurements, camera orbit/zoom and schematic verification
 
 ## Future stages (outside the laboratory upgrade)
 - Stage 2: authored lessons and saved progression
