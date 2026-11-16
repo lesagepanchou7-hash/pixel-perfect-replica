@@ -10,33 +10,219 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as LabsRouteImport } from './routes/labs'
+import { Route as LearnRouteImport } from './routes/learn'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as StudioRouteImport } from './routes/studio'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TutorRouteImport } from './routes/tutor'
+import { Route as LabsElectricalRouteImport } from './routes/labs_.electrical'
+import { Route as LearnTrackRouteImport } from './routes/learn_.$track'
+import { Route as StudioModuleRouteImport } from './routes/studio_.$module'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabsRoute = LabsRouteImport.update({
+  id: '/labs',
+  path: '/labs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnRoute = LearnRouteImport.update({
+  id: '/learn',
+  path: '/learn',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioRoute = StudioRouteImport.update({
+  id: '/studio',
+  path: '/studio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TutorRoute = TutorRouteImport.update({
+  id: '/tutor',
+  path: '/tutor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabsElectricalRoute = LabsElectricalRouteImport.update({
+  id: '/labs_/electrical',
+  path: '/labs/electrical',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnTrackRoute = LearnTrackRouteImport.update({
+  id: '/learn_/$track',
+  path: '/learn/$track',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioModuleRoute = StudioModuleRouteImport.update({
+  id: '/studio_/$module',
+  path: '/studio/$module',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
+  '/labs': typeof LabsRoute
+  '/learn': typeof LearnRoute
+  '/privacy': typeof PrivacyRoute
+  '/projects': typeof ProjectsRoute
+  '/settings': typeof SettingsRoute
+  '/studio': typeof StudioRoute
+  '/terms': typeof TermsRoute
+  '/tutor': typeof TutorRoute
+  '/labs/electrical': typeof LabsElectricalRoute
+  '/learn/$track': typeof LearnTrackRoute
+  '/studio/$module': typeof StudioModuleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
+  '/labs': typeof LabsRoute
+  '/learn': typeof LearnRoute
+  '/privacy': typeof PrivacyRoute
+  '/projects': typeof ProjectsRoute
+  '/settings': typeof SettingsRoute
+  '/studio': typeof StudioRoute
+  '/terms': typeof TermsRoute
+  '/tutor': typeof TutorRoute
+  '/labs/electrical': typeof LabsElectricalRoute
+  '/learn/$track': typeof LearnTrackRoute
+  '/studio/$module': typeof StudioModuleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
+  '/labs': typeof LabsRoute
+  '/learn': typeof LearnRoute
+  '/privacy': typeof PrivacyRoute
+  '/projects': typeof ProjectsRoute
+  '/settings': typeof SettingsRoute
+  '/studio': typeof StudioRoute
+  '/terms': typeof TermsRoute
+  '/tutor': typeof TutorRoute
+  '/labs_/electrical': typeof LabsElectricalRoute
+  '/learn_/$track': typeof LearnTrackRoute
+  '/studio_/$module': typeof StudioModuleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/dashboard'
+    | '/labs'
+    | '/learn'
+    | '/privacy'
+    | '/projects'
+    | '/settings'
+    | '/studio'
+    | '/terms'
+    | '/tutor'
+    | '/labs/electrical'
+    | '/learn/$track'
+    | '/studio/$module'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/dashboard'
+    | '/labs'
+    | '/learn'
+    | '/privacy'
+    | '/projects'
+    | '/settings'
+    | '/studio'
+    | '/terms'
+    | '/tutor'
+    | '/labs/electrical'
+    | '/learn/$track'
+    | '/studio/$module'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/dashboard'
+    | '/labs'
+    | '/learn'
+    | '/privacy'
+    | '/projects'
+    | '/settings'
+    | '/studio'
+    | '/terms'
+    | '/tutor'
+    | '/labs_/electrical'
+    | '/learn_/$track'
+    | '/studio_/$module'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  DashboardRoute: typeof DashboardRoute
+  LabsRoute: typeof LabsRoute
+  LearnRoute: typeof LearnRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ProjectsRoute: typeof ProjectsRoute
+  SettingsRoute: typeof SettingsRoute
+  StudioRoute: typeof StudioRoute
+  TermsRoute: typeof TermsRoute
+  TutorRoute: typeof TutorRoute
+  LabsElectricalRoute: typeof LabsElectricalRoute
+  LearnTrackRoute: typeof LearnTrackRoute
+  StudioModuleRoute: typeof StudioModuleRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +234,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/labs': {
+      id: '/labs'
+      path: '/labs'
+      fullPath: '/labs'
+      preLoaderRoute: typeof LabsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn': {
+      id: '/learn'
+      path: '/learn'
+      fullPath: '/learn'
+      preLoaderRoute: typeof LearnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio': {
+      id: '/studio'
+      path: '/studio'
+      fullPath: '/studio'
+      preLoaderRoute: typeof StudioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tutor': {
+      id: '/tutor'
+      path: '/tutor'
+      fullPath: '/tutor'
+      preLoaderRoute: typeof TutorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/labs_/electrical': {
+      id: '/labs_/electrical'
+      path: '/labs/electrical'
+      fullPath: '/labs/electrical'
+      preLoaderRoute: typeof LabsElectricalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn_/$track': {
+      id: '/learn_/$track'
+      path: '/learn/$track'
+      fullPath: '/learn/$track'
+      preLoaderRoute: typeof LearnTrackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio_/$module': {
+      id: '/studio_/$module'
+      path: '/studio/$module'
+      fullPath: '/studio/$module'
+      preLoaderRoute: typeof StudioModuleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  DashboardRoute: DashboardRoute,
+  LabsRoute: LabsRoute,
+  LearnRoute: LearnRoute,
+  PrivacyRoute: PrivacyRoute,
+  ProjectsRoute: ProjectsRoute,
+  SettingsRoute: SettingsRoute,
+  StudioRoute: StudioRoute,
+  TermsRoute: TermsRoute,
+  TutorRoute: TutorRoute,
+  LabsElectricalRoute: LabsElectricalRoute,
+  LearnTrackRoute: LearnTrackRoute,
+  StudioModuleRoute: StudioModuleRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
