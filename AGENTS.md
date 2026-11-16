@@ -32,5 +32,7 @@ use the editor.
 <!-- AGENT-MEMORY:BEGIN -->
 - Use shared workspace shells and browser-safe content definitions with distinct TanStack leaf routes, so public, learning and technical pages remain consistent and individually discoverable.
 - Keep anonymous demo preferences in validated tab-scoped sessionStorage, restored after hydration; defer durable cross-device preferences and accounts to Cloud integration to avoid collecting personal information during onboarding.
-- Keep preview UI separate from any future circuit solver and live AI services; foundation demonstrations must not emit simulated numerical results.
+- Keep one pure versioned circuit model for 2D/3D and an ml-matrix modified-nodal-analysis solver; report only validated numerical outputs and reject invalid or underdetermined topologies.
+- Mount the procedural electrical teaching apparatus behind a client-only lazy R3F boundary; convert CSS OKLCH material tokens to browser-resolved RGB before passing them to Three.js.
+- Keep live tutor calls authenticated and check protected adult_access in profiles; never grant clients write access to access-approval fields.
 <!-- AGENT-MEMORY:END -->
