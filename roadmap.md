@@ -1,8 +1,10 @@
 # EngineeringOS
-- [ ] Stage 1: identity, public home and responsive workspace navigation
-- [ ] Stage 1: dashboard, three-track course catalogue and lab catalogue
-- [ ] Stage 1: electrical workspace shell, tutor demo and future studio previews
-- [ ] Stage 1: settings, honest project empty state and cross-device verification
-- [ ] Stage 2 (future): authored lessons and saved progression
-- [ ] Stage 3 (future): interactive circuit editor and validated DC solver
-- [ ] Stage 4 (future): accounts, cloud projects and secure live AI; ask about profiles before authentication
+- [x] Stage 1: identity, public home and responsive workspace navigation
+- [x] Stage 1: dashboard, three-track course catalogue and lab catalogue
+- [x] Stage 1: electrical workspace shell, tutor demo and future studio previews
+- [x] Stage 1: settings, honest project empty state and cross-device verification
+
+## Future stages (outside this request)
+- Stage 2: authored lessons and saved progression
+- Stage 3: interactive circuit editor and validated DC solver
+- Stage 4: accounts, cloud projects and secure live AI; ask about profiles before authentication
