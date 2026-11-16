@@ -1,8 +1,11 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { intentEnvironment, type Intent, type Environment } from '@/lib/onboarding';
-type Preferences = { level: string; setLevel: (value: string) => void; theme: string; setTheme: (value: string) => void; environment: Environment; setEnvironment: (value: Environment) => void; intent: Intent | null; ready: boolean; completeOnboarding: (intent: Intent, level?: string) => void; resetOnboarding: () => void; interests: string[]; setInterests: (value: string[]) => void };
-const PreferencesContext = createContext<Preferences>({ level: 'foundation', setLevel: () => {}, theme: 'automatic', setTheme: () => {}, environment: 'learn', setEnvironment: () => {}, intent: null, ready: false, completeOnboarding: () => {}, resetOnboarding: () => {}, interests: [], setInterests: () => {} });
+import {supabase} from '@/integrations/supabase/client';
+import type {User} from '@supabase/supabase-js';
+type Preferences = { user:User|null;  level: string; setLevel: (value: string) => void; theme: string; setTheme: (value: string) => void; environment: Environment; setEnvironment: (value: Environment) => void; intent: Intent | null; ready: boolean; completeOnboarding: (intent: Intent, level?: string) => void; resetOnboarding: () => void; interests: string[]; setInterests: (value: string[]) => void };
+const PreferencesContext = createContext<Preferences>({ user:null, level: 'foundation', setLevel: () => {}, theme: 'automatic', setTheme: () => {}, environment: 'learn', setEnvironment: () => {}, intent: null, ready: false, completeOnboarding: () => {}, resetOnboarding: () => {}, interests: [], setInterests: () => {} });
 export function EngineeringProvider({ children }: { children: ReactNode }) {
+  const [user,setUser]=useState<User|null>(null);
   const [level, setLevel] = useState('foundation');
   const [theme, setTheme] = useState('automatic');
   const [environment, setEnvironment] = useState<Environment>('learn');
@@ -26,7 +29,8 @@ export function EngineeringProvider({ children }: { children: ReactNode }) {
     if (!ready) return;
     try { sessionStorage.setItem('engineeringos-demo-preferences', JSON.stringify({ level, theme, environment, intent, interests })); } catch { /* No cloud persistence is implied. */ }
   }, [level, theme, environment, intent, interests, ready]);
+  useEffect(()=>{const {data:{subscription}}=supabase.auth.onAuthStateChange((_event,session)=>{setUser(session?.user||null);});void supabase.auth.getUser().then(({data})=>setUser(data.user));return ()=>subscription.unsubscribe();},[]);
   function completeOnboarding(value: Intent, selectedLevel?: string) { setIntent(value); setEnvironment(intentEnvironment(value)); if (selectedLevel) setLevel(selectedLevel); }
-  return <PreferencesContext.Provider value={{ level, setLevel, theme, setTheme, environment, setEnvironment, intent, ready, completeOnboarding, resetOnboarding: () => setIntent(null), interests, setInterests }}>{children}</PreferencesContext.Provider>;
+  return <PreferencesContext.Provider value={{ user, level, setLevel, theme, setTheme, environment, setEnvironment, intent, ready, completeOnboarding, resetOnboarding: () => setIntent(null), interests, setInterests }}>{children}</PreferencesContext.Provider>;
 }
 export const usePreferences = () => useContext(PreferencesContext);
