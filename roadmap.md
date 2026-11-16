@@ -5,6 +5,11 @@
 - [x] Stage 1: settings, honest project empty state and cross-device verification
 
 ## Future stages (outside this request)
+- [ ] Step A: four-choice entry, level selection and personalised Learn/Create dashboards
+- [ ] Step A: separate navigation, preference controls and end-to-end testing
+- Step B: interactive 3D laboratory (not started in Step A)
+- Step C: shared circuit model, connections and validated calculations
+- Step D: protected live AI integration
 - Stage 2: authored lessons and saved progression
 - Stage 3: interactive circuit editor and validated DC solver
 - Stage 4: accounts, cloud projects and secure live AI; ask about profiles before authentication
