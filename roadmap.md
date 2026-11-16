@@ -4,9 +4,11 @@
 - [x] Stage 1: electrical workspace shell, tutor demo and future studio previews
 - [x] Stage 1: settings, honest project empty state and cross-device verification
 
+## Step A
+- [x] Four-choice entry, level selection and personalised Learn/Create dashboards
+- [x] Separate navigation, preference controls and end-to-end testing
+
 ## Future stages (outside this request)
-- [ ] Step A: four-choice entry, level selection and personalised Learn/Create dashboards
-- [ ] Step A: separate navigation, preference controls and end-to-end testing
 - Step B: interactive 3D laboratory (not started in Step A)
 - Step C: shared circuit model, connections and validated calculations
 - Step D: protected live AI integration
