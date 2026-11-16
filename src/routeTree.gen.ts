@@ -12,9 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CreateRouteImport } from './routes/create'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as EntryRouteImport } from './routes/entry'
 import { Route as LabsRouteImport } from './routes/labs'
 import { Route as LearnRouteImport } from './routes/learn'
+import { Route as PlannerRouteImport } from './routes/planner'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SettingsRouteImport } from './routes/settings'
@@ -40,9 +43,19 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CreateRoute = CreateRouteImport.update({
+  id: '/create',
+  path: '/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EntryRoute = EntryRouteImport.update({
+  id: '/entry',
+  path: '/entry',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LabsRoute = LabsRouteImport.update({
@@ -53,6 +66,11 @@ const LabsRoute = LabsRouteImport.update({
 const LearnRoute = LearnRouteImport.update({
   id: '/learn',
   path: '/learn',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlannerRoute = PlannerRouteImport.update({
+  id: '/planner',
+  path: '/planner',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -105,9 +123,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/create': typeof CreateRoute
   '/dashboard': typeof DashboardRoute
+  '/entry': typeof EntryRoute
   '/labs': typeof LabsRoute
   '/learn': typeof LearnRoute
+  '/planner': typeof PlannerRoute
   '/privacy': typeof PrivacyRoute
   '/projects': typeof ProjectsRoute
   '/settings': typeof SettingsRoute
@@ -122,9 +143,12 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/create': typeof CreateRoute
   '/dashboard': typeof DashboardRoute
+  '/entry': typeof EntryRoute
   '/labs': typeof LabsRoute
   '/learn': typeof LearnRoute
+  '/planner': typeof PlannerRoute
   '/privacy': typeof PrivacyRoute
   '/projects': typeof ProjectsRoute
   '/settings': typeof SettingsRoute
@@ -140,9 +164,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/create': typeof CreateRoute
   '/dashboard': typeof DashboardRoute
+  '/entry': typeof EntryRoute
   '/labs': typeof LabsRoute
   '/learn': typeof LearnRoute
+  '/planner': typeof PlannerRoute
   '/privacy': typeof PrivacyRoute
   '/projects': typeof ProjectsRoute
   '/settings': typeof SettingsRoute
@@ -159,9 +186,12 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/create'
     | '/dashboard'
+    | '/entry'
     | '/labs'
     | '/learn'
+    | '/planner'
     | '/privacy'
     | '/projects'
     | '/settings'
@@ -176,9 +206,12 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/create'
     | '/dashboard'
+    | '/entry'
     | '/labs'
     | '/learn'
+    | '/planner'
     | '/privacy'
     | '/projects'
     | '/settings'
@@ -193,9 +226,12 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/create'
     | '/dashboard'
+    | '/entry'
     | '/labs'
     | '/learn'
+    | '/planner'
     | '/privacy'
     | '/projects'
     | '/settings'
@@ -211,9 +247,12 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  CreateRoute: typeof CreateRoute
   DashboardRoute: typeof DashboardRoute
+  EntryRoute: typeof EntryRoute
   LabsRoute: typeof LabsRoute
   LearnRoute: typeof LearnRoute
+  PlannerRoute: typeof PlannerRoute
   PrivacyRoute: typeof PrivacyRoute
   ProjectsRoute: typeof ProjectsRoute
   SettingsRoute: typeof SettingsRoute
@@ -248,11 +287,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/create': {
+      id: '/create'
+      path: '/create'
+      fullPath: '/create'
+      preLoaderRoute: typeof CreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/entry': {
+      id: '/entry'
+      path: '/entry'
+      fullPath: '/entry'
+      preLoaderRoute: typeof EntryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/labs': {
@@ -267,6 +320,13 @@ declare module '@tanstack/react-router' {
       path: '/learn'
       fullPath: '/learn'
       preLoaderRoute: typeof LearnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planner': {
+      id: '/planner'
+      path: '/planner'
+      fullPath: '/planner'
+      preLoaderRoute: typeof PlannerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -339,9 +399,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  CreateRoute: CreateRoute,
   DashboardRoute: DashboardRoute,
+  EntryRoute: EntryRoute,
   LabsRoute: LabsRoute,
   LearnRoute: LearnRoute,
+  PlannerRoute: PlannerRoute,
   PrivacyRoute: PrivacyRoute,
   ProjectsRoute: ProjectsRoute,
   SettingsRoute: SettingsRoute,

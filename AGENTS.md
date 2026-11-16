@@ -31,6 +31,6 @@ use the editor.
 
 <!-- AGENT-MEMORY:BEGIN -->
 - Use shared workspace shells and browser-safe content definitions with distinct TanStack leaf routes, so public, learning and technical pages remain consistent and individually discoverable.
-- Stage 1 preferences are visit-scoped React context only; defer authentication and durable data to the requested integration stage rather than imply persistence.
+- Keep anonymous demo preferences in validated tab-scoped sessionStorage, restored after hydration; defer durable cross-device preferences and accounts to Cloud integration to avoid collecting personal information during onboarding.
 - Keep preview UI separate from any future circuit solver and live AI services; foundation demonstrations must not emit simulated numerical results.
 <!-- AGENT-MEMORY:END -->
