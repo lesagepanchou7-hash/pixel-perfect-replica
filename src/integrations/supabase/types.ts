@@ -14,6 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
+      ai_service_state: {
+        Row: {
+          id: string
+          reason: string
+          status: number
+          updated_at: string
+        }
+        Insert: {
+          id: string
+          reason: string
+          status: number
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          reason?: string
+          status?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           adult_access: boolean
