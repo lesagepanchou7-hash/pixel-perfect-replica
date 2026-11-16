@@ -21,9 +21,9 @@ import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudioRouteImport } from './routes/studio'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TutorRouteImport } from './routes/tutor'
-import { Route as LabsElectricalRouteImport } from './routes/labs.electrical'
-import { Route as LearnTrackRouteImport } from './routes/learn.$track'
-import { Route as StudioModuleRouteImport } from './routes/studio.$module'
+import { Route as LabsElectricalRouteImport } from './routes/labs_.electrical'
+import { Route as LearnTrackRouteImport } from './routes/learn_.$track'
+import { Route as StudioModuleRouteImport } from './routes/studio_.$module'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -86,19 +86,19 @@ const TutorRoute = TutorRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const LabsElectricalRoute = LabsElectricalRouteImport.update({
-  id: '/electrical',
-  path: '/electrical',
-  getParentRoute: () => LabsRoute,
+  id: '/labs_/electrical',
+  path: '/labs/electrical',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const LearnTrackRoute = LearnTrackRouteImport.update({
-  id: '/$track',
-  path: '/$track',
-  getParentRoute: () => LearnRoute,
+  id: '/learn_/$track',
+  path: '/learn/$track',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const StudioModuleRoute = StudioModuleRouteImport.update({
-  id: '/$module',
-  path: '/$module',
-  getParentRoute: () => StudioRoute,
+  id: '/studio_/$module',
+  path: '/studio/$module',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -106,12 +106,12 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
-  '/labs': typeof LabsRouteWithChildren
-  '/learn': typeof LearnRouteWithChildren
+  '/labs': typeof LabsRoute
+  '/learn': typeof LearnRoute
   '/privacy': typeof PrivacyRoute
   '/projects': typeof ProjectsRoute
   '/settings': typeof SettingsRoute
-  '/studio': typeof StudioRouteWithChildren
+  '/studio': typeof StudioRoute
   '/terms': typeof TermsRoute
   '/tutor': typeof TutorRoute
   '/labs/electrical': typeof LabsElectricalRoute
@@ -123,12 +123,12 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
-  '/labs': typeof LabsRouteWithChildren
-  '/learn': typeof LearnRouteWithChildren
+  '/labs': typeof LabsRoute
+  '/learn': typeof LearnRoute
   '/privacy': typeof PrivacyRoute
   '/projects': typeof ProjectsRoute
   '/settings': typeof SettingsRoute
-  '/studio': typeof StudioRouteWithChildren
+  '/studio': typeof StudioRoute
   '/terms': typeof TermsRoute
   '/tutor': typeof TutorRoute
   '/labs/electrical': typeof LabsElectricalRoute
@@ -141,17 +141,17 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
-  '/labs': typeof LabsRouteWithChildren
-  '/learn': typeof LearnRouteWithChildren
+  '/labs': typeof LabsRoute
+  '/learn': typeof LearnRoute
   '/privacy': typeof PrivacyRoute
   '/projects': typeof ProjectsRoute
   '/settings': typeof SettingsRoute
-  '/studio': typeof StudioRouteWithChildren
+  '/studio': typeof StudioRoute
   '/terms': typeof TermsRoute
   '/tutor': typeof TutorRoute
-  '/labs/electrical': typeof LabsElectricalRoute
-  '/learn/$track': typeof LearnTrackRoute
-  '/studio/$module': typeof StudioModuleRoute
+  '/labs_/electrical': typeof LabsElectricalRoute
+  '/learn_/$track': typeof LearnTrackRoute
+  '/studio_/$module': typeof StudioModuleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -202,9 +202,9 @@ export interface FileRouteTypes {
     | '/studio'
     | '/terms'
     | '/tutor'
-    | '/labs/electrical'
-    | '/learn/$track'
-    | '/studio/$module'
+    | '/labs_/electrical'
+    | '/learn_/$track'
+    | '/studio_/$module'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -212,14 +212,17 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   DashboardRoute: typeof DashboardRoute
-  LabsRoute: typeof LabsRouteWithChildren
-  LearnRoute: typeof LearnRouteWithChildren
+  LabsRoute: typeof LabsRoute
+  LearnRoute: typeof LearnRoute
   PrivacyRoute: typeof PrivacyRoute
   ProjectsRoute: typeof ProjectsRoute
   SettingsRoute: typeof SettingsRoute
-  StudioRoute: typeof StudioRouteWithChildren
+  StudioRoute: typeof StudioRoute
   TermsRoute: typeof TermsRoute
   TutorRoute: typeof TutorRoute
+  LabsElectricalRoute: typeof LabsElectricalRoute
+  LearnTrackRoute: typeof LearnTrackRoute
+  StudioModuleRoute: typeof StudioModuleRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -308,74 +311,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TutorRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/labs/electrical': {
-      id: '/labs/electrical'
-      path: '/electrical'
+    '/labs_/electrical': {
+      id: '/labs_/electrical'
+      path: '/labs/electrical'
       fullPath: '/labs/electrical'
       preLoaderRoute: typeof LabsElectricalRouteImport
-      parentRoute: typeof LabsRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/learn/$track': {
-      id: '/learn/$track'
-      path: '/$track'
+    '/learn_/$track': {
+      id: '/learn_/$track'
+      path: '/learn/$track'
       fullPath: '/learn/$track'
       preLoaderRoute: typeof LearnTrackRouteImport
-      parentRoute: typeof LearnRoute
+      parentRoute: typeof rootRouteImport
     }
-    '/studio/$module': {
-      id: '/studio/$module'
-      path: '/$module'
+    '/studio_/$module': {
+      id: '/studio_/$module'
+      path: '/studio/$module'
       fullPath: '/studio/$module'
       preLoaderRoute: typeof StudioModuleRouteImport
-      parentRoute: typeof StudioRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
-
-interface LabsRouteChildren {
-  LabsElectricalRoute: typeof LabsElectricalRoute
-}
-
-const LabsRouteChildren: LabsRouteChildren = {
-  LabsElectricalRoute: LabsElectricalRoute,
-}
-
-const LabsRouteWithChildren = LabsRoute._addFileChildren(LabsRouteChildren)
-
-interface LearnRouteChildren {
-  LearnTrackRoute: typeof LearnTrackRoute
-}
-
-const LearnRouteChildren: LearnRouteChildren = {
-  LearnTrackRoute: LearnTrackRoute,
-}
-
-const LearnRouteWithChildren = LearnRoute._addFileChildren(LearnRouteChildren)
-
-interface StudioRouteChildren {
-  StudioModuleRoute: typeof StudioModuleRoute
-}
-
-const StudioRouteChildren: StudioRouteChildren = {
-  StudioModuleRoute: StudioModuleRoute,
-}
-
-const StudioRouteWithChildren =
-  StudioRoute._addFileChildren(StudioRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   DashboardRoute: DashboardRoute,
-  LabsRoute: LabsRouteWithChildren,
-  LearnRoute: LearnRouteWithChildren,
+  LabsRoute: LabsRoute,
+  LearnRoute: LearnRoute,
   PrivacyRoute: PrivacyRoute,
   ProjectsRoute: ProjectsRoute,
   SettingsRoute: SettingsRoute,
-  StudioRoute: StudioRouteWithChildren,
+  StudioRoute: StudioRoute,
   TermsRoute: TermsRoute,
   TutorRoute: TutorRoute,
+  LabsElectricalRoute: LabsElectricalRoute,
+  LearnTrackRoute: LearnTrackRoute,
+  StudioModuleRoute: StudioModuleRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
